@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - logs:/data
+    container_name: volume-demo
+
+volumes:
+  logs:
+    driver: local
