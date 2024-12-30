@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  server:
+    build:
+      context: .
+    networks:
+      - app_network
+    ports:
+      - "12345:12345"
+    command: ["python3", "server.py"]
+
+  client:
+    build:
+      context: .
+    networks:
+      - app_network
+    command: ["python3", "client.py"]
+
+networks:
+  app_network:
+    driver: bridge
